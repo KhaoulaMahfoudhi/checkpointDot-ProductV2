@@ -1,0 +1,43 @@
+PROCEDURE dot_product (v1,v2)
+VAR
+ps: FLOAT;
+BEGIN
+ps := v1 + v2 ;
+read (ps);
+END
+
+
+PROCEDURE read_arrayMatrixLine (n : INTEGER, VAR T: ARRAY_OF FLOAT)
+VAR
+i: INTEGER.
+BEGIN
+FOR i FROM 0 TO n-1 DO
+Read (T[i]);
+END_FOR
+END
+
+
+ALGORITHM Vectors
+VAR
+
+i,j,n : INTEGER;
+SUM,Res : FLOAT;
+
+BEGIN
+m : ARRAY_OF FLOAT[M:=50][N:=2]
+read_arrayMatrixLine(n, tab);
+FOR i FROM 0 TO M-1 DO
+FOR j FROM 0 TO N-1 DO
+
+Res:= dot_product(N[i], N[i+1]);
+SUM:= Res[j]+Res[j+1];
+
+IF (SUM = 0) THEN
+WRITE ("two orthogonal vectors");
+ELSE
+WRITE ("two not orthogonal vectors");
+
+END_FOR
+END_FOR
+
+END
